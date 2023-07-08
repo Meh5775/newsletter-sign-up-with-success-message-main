@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <style>
+      .errorTXT {
+        display: none;
+      }
+
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      @media screen and (min-width: 601px) {
+        .MainDiv {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: rgb(65,65,65,1);
+        }
+
+        .SecondDiv {
+          width: 80%;
+          height: 80%;
+          align-items: center;
+          border-radius: 15px;
+          display: flex;
+          flex-direction: row;
+          border: 1px solid #ddd;
+          box-shadow: 0 1px 10px #ddd;
+          background-color: #fff;
+        }
+
+        .ThirdDiv {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 90%;
+        }
+
+        .StayUpdate {
+          font-size: 54px;
+          font-weight: bold;
+        }
+
+        .ThreeDiv {
+          width: 80%;
+          height: 100px;
+          margin: 20px 0px;
+        }
+
+        .Division {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+        }
+
+        .Icons {
+          width: 30px;
+          height: 30px;
+          margin-right: 20px;
+        }
+
+        .LastDiv {
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          height: 150px;
+          justify-content: space-evenly;
+        }
+
+        .EmailInput {
+          width: 95%;
+          height: 40px;
+          border-radius: 8px;
+          border-color: #ddd;
+          line-height: 2rem;
+          padding-left: 15px;
+        }
+
+        .Submit-BTN {
+          width: 100%;
+          height: 40px;
+          background-color: #000;
+          color: #fff;
+          border-radius: 5px;
+        }
+
+        .FourthDiv {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .NewsLetterDiv {
+          width: 85%;
+          height: 90%;
+          background-color: #be4210;
+          border-radius: 15px;
+        }
+
+        .NewsLetterImg {
+          width: 100%;
+          height: 100%;
+          transform: scale(1.6, 1);
+        }
+
+        .FinalEmailDiv {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .txtSpan{
+          width: 75%;
+          margin: 15px 0px;
+        }
+
+        /*#region [- Second Page -]*/
+        .SuccessfulDiv {
+          display: none;
+          width: 100%;
+          height: 97vh;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(65,56, 65);
+        }
+
+        .CenteralDiv {
+          width: 35%;
+          height: 60%;
+          border-radius: 15px;
+          border: 0.5px solid #ddd;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          background-color: rgb(255,255,255,1);
+        }
+
+        .thanksSpan {
+          width: 100%;
+          font-size: 54px;
+          font-weight: bolder;
+          font-family: sans-serif;
+        }
+
+        .Dis-BTN {
+          width: 80%;
+          height: 50px;
+          background-color: #000;
+          border-radius: 15px;
+          color: #fff;
+        }
+
+        .FinalEmailDiv {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .CenteralTXT {
+          width: 100%;
+          height: 100%;
+          padding: 10px 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        }
+
+        /*#endregion*/
+      }
+
+      @media screen and (max-width: 600px) {
+        /* #region [- First Page -]*/
+        .MainDiv {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          overflow-x: hidden;
+        }
+
+        .SecondDiv {
+          width: 100%;
+          align-items: center;
+          border-radius: 15px;
+          display: flex;
+          flex-direction: column-reverse;
+          border: 1px solid #ddd;
+          box-shadow: 0 1px 10px #ddd;
+        }
+
+        .ThirdDiv {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 60%;
+        }
+
+        .StayUpdate {
+          font-size: 54px;
+          font-weight: bold;
+        }
+
+        .ThreeDiv {
+          width: 80%;
+          height: 100px;
+          margin: 20px 0px;
+        }
+
+        .Division {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+        }
+
+        .Icons {
+          width: 30px;
+          height: 30px;
+          margin-right: 20px;
+        }
+
+        .LastDiv {
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          height: 150px;
+          justify-content: space-evenly;
+        }
+
+        .EmailInput {
+          width: 100%;
+          height: 40px;
+          border-radius: 8px;
+          border-color: #ddd;
+          line-height: 2rem;
+          padding-left: 15px;
+        }
+
+        .Submit-BTN {
+          width: 100%;
+          height: 40px;
+          background-color: #000;
+          color: #fff;
+          border-radius: 5px;
+        }
+
+        .FourthDiv {
+          width: 100%;
+          height: 40%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .NewsLetterDiv {
+          width: 100%;
+          /*height: 90%;
+          background-color: #be4210;
+          border-radius: 15px;*/ 
+        }
+
+        .NewsLetterImg {
+          width: 100%;
+          height: 100%;
+        }
+        /*#endregion*/
+      
+        /*#region [- Second Page -]*/
+        .SuccessfulDiv {
+          display: none;
+          width: 100%;
+          height: 97vh;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(65,56, 65);
+        }
+
+        .CenteralDiv {
+          width: 100%;
+          height: 100%;
+          border: 0.5px solid #ddd;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          background-color: rgb(255,255,255,1);
+        }
+
+        .thanksSpan {
+          width: 100%;
+          font-size: 54px;
+          font-weight: bolder;
+          font-family: sans-serif;
+        }
+
+        .Dis-BTN {
+          width: 80%;
+          height: 50px;
+          background-color: #000;
+          border-radius: 15px;
+          color: #fff;
+        }
+
+        .FinalEmailDiv {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .CenteralTXT {
+          width: 100%;
+          height: 100%;
+          padding: 10px 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .txtSpan{
+          width: 75%;
+          margin-bottom: 200px;
+        }
+
+        /*#endregion*/
+      
+      }
+    </style>
+  </head>
+
+  <body onload="changeImage()">
+    <div class="MainDiv">
+      <div class="SecondDiv">
+        <div class="ThirdDiv">
+          <span class="StayUpdate">Stay Update!</span>
+          <b style="width: 75%"
+            >Join 60,000+ product managers receiving monthly updates on :</b
+          >
+          <div class="ThreeDiv">
+            <div class="Divisions">
+              <img src="assets/images/icon-list.svg" class="Icons" /><span
+                >Product discovery and building what matters</span
+              >
+            </div>
+            <div class="Division">
+              <img src="assets/images/icon-list.svg" class="Icons" /><span
+                >Measuring to ensure updates are a success</span
+              >
+            </div>
+            <div class="Division">
+              <img src="assets/images/icon-list.svg" class="Icons" /><span
+                >And much more!</span
+              >
+            </div>
+          </div>
+          <div class="LastDiv">
+            <div class="FinalEmailDiv">
+              <b>Email addreess</b>
+              <b class="errorTXT">valid email required</b>
+            </div>
+            <input
+              type="email"
+              placeholder="email@company.com"
+              class="EmailInput"
+              id="EmailInput"
+            />
+            <input
+              type="button"
+              class="Submit-BTN"
+              value="Subscribe to monthly newsletter"
+            />
+          </div>
+        </div>
+        <div class="FourthDiv">
+          <div class="NewsLetterDiv">
+            <img
+              src="assets/images/illustration-sign-up-desktop.svg"
+              alt="Newsletter"
+              class="NewsLetterImg"
+              id="NewsLetterImg"
+            />
+          </div>
+        </div>
+        <script>
+          function changeImage() {
+            if (window.innerWidth < 501) {
+              console.log(document.querySelector(".NewsLetterImg"));
+              document.getElementById("NewsLetterImg").src =
+                "assets/images/illustration-sign-up-mobile.svg";
+              console.log(document.querySelector(".NewsLetterImg"));
+            } else {
+              document.getElementById("NewsLetterImg").src =
+                "assets/images/illustration-sign-up-desktop.svg";
+            }
+          }
+
+          changeImage();
+
+          window.addEventListener("resize", changeImage());
+        </script>
+      </div>
+    </div>
+
+    <div class="SuccessfulDiv">
+      <div class="CenteralDiv">
+        <div class="CenteralTXT">
+          <img src="assets/images/icon-success.svg" alt="Tick" class="Icons" />
+          <span class="thanksSpan">Thanks for subscribing!</span>
+          <span class="txtSpan">A configuration email has been sent to
+            <span style="font-weight: bold;">ash@loremcompany.com</span>
+            . Please open it and click the button inside to confirm your
+            subscription.</span
+          >
+          <input type="button" value="Dismiss message" class="Dis-BTN" />
+        </div>
+      </div>
+    </div>
+    <script>
+      let main = document.querySelector(".MainDiv");
+      let successful = document.querySelector(".SuccessfulDiv");
+      let button = document.querySelector(".Submit-BTN");
+      let error = document.querySelector(".errorTXT");
+      button.addEventListener("click", () => {
+        let email = document.querySelector(".EmailInput");
+        let checkEmail = email.value;
+        console.log(email.getAttribute("value"));
+        if (checkEmail === "ash@loremcompany.com") {
+          successful.style.display = "flex";
+          main.style.display = "none";
+        } else {
+          email.style.borderColor = "red";
+          email.style.backgroundColor = "rgb(255,0,0,0.2)";
+          email.style.color = "#000";
+          error.style.display = "block";
+          error.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
